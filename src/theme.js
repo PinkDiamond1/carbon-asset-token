@@ -1,12 +1,3 @@
-const black = '#000000';
-const darkestGrey = '#727272';
-const darkGrey = '#999999';
-const grey = '#cccccc';
-const lightGrey = '#D9D9D9';
-const lightestGrey = '#F5F5F5';
-const white = '#FFFFFF';
-const accent = '#DD2288';
-
 const hexToRgba = (hex, opacity) => {
   opacity = opacity || 1;
   hex = hex.replace(/[^0-9A-F]/gi, '');
@@ -32,30 +23,19 @@ const headings = {
  * @type {ThemeVariant}
  */
 let colors = {
-  common: {
-    black,
-    darkestGrey,
-    darkGrey,
-    grey,
-    lightGrey,
-    lightestGrey,
-    white,
-    accent,
-  },
   light: {
     // The color displayed most frequently across the app screens
-    primary: '#6200EE',
-    primaryVarient: '#3700B3',
+    primary: 'NOT USED',
+    primaryVarient: 'NOT USED',
     // Secondary color provides more ways to accent and distinguish the app
-    secondary: '#03DAC6',
-    secondaryVarient: '#018786',
+    secondary: 'NOT USED',
+    secondaryVarient: 'NOT USED',
     // appears behind scrollable content
-    background: '#FFFFFF',
+    background: '#fafafa',
     // affect surfaces of componennts such as cards sheets and menus
-    surface: '#FFFFFF',
-    // indicates errors in components
-    error: '#B00020',
-    errorVarient: 'rgba(187, 34, 136, 0.05)',
+    surface: '##fff',
+    surfaceShadow:
+      '0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);',
     //"On" colors
     // App surfaces use colors from specific categories in your color palette,
     // such as a primary color. Whenever elements, such as text or icons, appear in
@@ -71,31 +51,41 @@ let colors = {
     //
     // "On" colors are primarily applied to text, iconography, and strokes.
     // Sometimes, they are applied to surfaces.
-    onPrimary: '#FFFFFF',
+    onPrimary: '#00000',
     onSecondary: '#00000',
-    onBackground: '#00000',
-    onSurface: '#00000',
-    onError: '#FFFFFF',
+    onBackground: 'rgba(0, 0, 0, 0.54)',
+    onSurface: 'rgba(0, 0, 0, 0.87)',
+    onError: '#00000',
+    status: {
+      error: '#dc3546',
+      warning: '#f7c93e',
+      ok: '#3AAC59',
+    },
   },
   dark: {
-    primary: '6200EE',
-    primaryVarient: '#3700B3',
-    secondary: '#03DAC6',
-    secondaryVarient: '#018786',
-    background: '#FFFFF',
-    surface: '#121212',
-    error: '#B00020',
-    errorVarient: 'rgba(187, 34, 136, 0.05)',
+    primary: 'NOT USED',
+    primaryVarient: 'NOT USED',
+    secondary: 'NOT USED',
+    secondaryVarient: 'NOT USED',
+    background: '#303030',
+    surface: '#424242',
+    surfaceShadow:
+      '0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);',
     onPrimary: '#FFFFFF',
-    onSecondary: '#00000',
-    onBackground: '#00000',
-    onSurface: '#00000',
+    onSecondary: '#FFFFFF',
+    onBackground: '#FFFFFF',
+    onSurface: '#FFFFFF',
     onError: '#FFFFFF',
+    status: {
+      error: '#dc3546',
+      warning: '#f7c93e',
+      ok: '#3AAC59',
+    },
   },
 };
 
 const typography = {
-  primary: 'Arial',
+  primary: "'Roboto', 'Helvetica', 'Arial', sans-serif",
   primaryVariant: 'Arial',
   secondary: 'Arial',
   secondaryVarient: 'Arial',

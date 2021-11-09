@@ -28,7 +28,10 @@ const App = () => {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <IntlProvider defaultLocale="en" messages={translationTokens.default}>
+        <IntlProvider
+          locale="en"
+          defaultLocale="en"
+          messages={translationTokens.default}>
           <AppNavigator />
         </IntlProvider>
       </ThemeProvider>

@@ -6,8 +6,8 @@ const Container = styled('div')`
   width: 100%;
 `;
 
-const Spacer = ({children, size}) => (
+const VerticalSpacer = ({children, size}) => (
   <Container size={size}>{children}</Container>
 );
 
-export {Spacer};
+export {VerticalSpacer};

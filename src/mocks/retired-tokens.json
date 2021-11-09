@@ -1,0 +1,29 @@
+[
+  {
+    "coin_id": "001",
+    "name": "TEST_NAME",
+    "public_key": "xch1llxsnnutrmc58qz5s7kzt94qhgcdhevmakusnur5aw5zxw2s8c0qsn3ghl",
+    "value": "SOME VALUE",
+    "block_height": 1000000,
+    "created_at": "2017-05-05",
+    "notified_at": true
+  },
+  {
+    "coin_id": "002",
+    "name": "TEST_NAME",
+    "public_key": "xch1llxsnnutrmc58qz5s7kzt94qhgcdhevmakusnur5aw5zxw2s8c0qsn3ghl",
+    "value": "SOME VALUE",
+    "block_height": 1000000,
+    "created_at": "2017-05-05",
+    "notified_at": true
+  },
+  {
+    "coin_id": "003",
+    "name": "TEST_NAME",
+    "public_key": "xch1llxsnnutrmc58qz5s7kzt94qhgcdhevmakusnur5aw5zxw2s8c0qsn3ghl",
+    "value": "SOME VALUE",
+    "block_height": 1000000,
+    "created_at": "2017-05-05",
+    "notified_at": true
+  }
+]

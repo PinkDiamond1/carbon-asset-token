@@ -1,28 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import {FormattedMessage} from 'react-intl';
-import {useSelector} from 'react-redux';
-import './App.css';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+
+import {getRetiredTokens} from '../../store/actions/tokens';
 
 const Home = () => {
-  const appStore = useSelector(state => state.app);
+  const dispatch = useDispatch();
+  const tokenStore = useSelector(state => state.tokens);
+
+  useEffect(
+    () => dispatch(getRetiredTokens({useMockedResponse: true})),
+    [dispatch],
+  );
+
+  if (!tokenStore.retiredTokens) {
+    return null;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FormattedMessage id="hello-world" />
-          <div>{appStore.placeholderValue}</div>
-        </a>
-      </header>
+    <div>
+      {tokenStore.retiredTokens.map(token => (
+        <div key={token.coin_id}>{token.public_key}</div>
+      ))}
     </div>
   );
 };
