@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {keyMirror} from '../store-functions';
 import constants from '../../constants';
 
@@ -13,7 +14,12 @@ export const actions = keyMirror('GET_RETIRED_TOKENS');
 
 const mockedTokenResponse = {
   type: actions.GET_RETIRED_TOKENS,
-  payload: mockedRetiredTokenResponse,
+  // Different envs import this differently
+  payload: _.get(
+    mockedRetiredTokenResponse,
+    'default',
+    mockedRetiredTokenResponse,
+  ),
 };
 
 export const getRetiredTokens = ({useMockedResponse = false}) => {

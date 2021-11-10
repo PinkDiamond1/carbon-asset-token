@@ -3,6 +3,7 @@ import _ from 'lodash';
 import React, {useEffect, useState, useMemo} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import MiniSearch from 'minisearch';
+import {useIntl} from 'react-intl';
 
 import constants from '../../constants';
 import {Card, DataTable} from '../../components';
@@ -34,6 +35,7 @@ const miniSearch = new MiniSearch({
 
 const Home = () => {
   const dispatch = useDispatch();
+  const intl = useIntl();
   const tokenStore = useSelector(state => state.tokens);
   const [search, setSearch] = useState();
 
@@ -48,6 +50,7 @@ const Home = () => {
     }
   }, [tokenStore.retiredTokens]);
 
+  // Chunk the tokenResults into pages for pagination
   const tokenResultsPages = useMemo(() => {
     if (!tokenStore.retiredTokens) {
       return undefined;
@@ -58,7 +61,12 @@ const Home = () => {
     }
 
     return _.chunk(
-      tokenStore.retiredTokens.filter(token => search.includes(token.coin_id)),
+      _.sortBy(
+        tokenStore.retiredTokens.filter(token =>
+          search.includes(token.coin_id),
+        ),
+        item => search.indexOf(item.coin_id),
+      ),
       constants.MAX_TABLE_SIZE,
     );
   }, [tokenStore.retiredTokens, search]);
@@ -66,7 +74,7 @@ const Home = () => {
   const handleSearchInputChange = event => {
     const search = miniSearch.search(event.target.value, {prefix: true});
     console.log(search);
-    setSearch(search.map(result => result.id));
+    setSearch(search.sort(result => result.score).map(result => result.id));
   };
 
   if (!tokenResultsPages) {
@@ -78,7 +86,7 @@ const Home = () => {
       <Card>
         <input
           type="text"
-          placeholder="Search"
+          placeholder={intl.formatMessage({id: 'search'})}
           onChange={handleSearchInputChange}
         />
       </Card>
@@ -86,13 +94,13 @@ const Home = () => {
         <Card>
           <DataTable
             headings={[
-              'Coin ID',
-              'Name',
-              'Public Key',
-              'Value',
-              'Block Height',
-              'Created At',
-              'Notified At',
+              intl.formatMessage({id: 'coin-id'}),
+              intl.formatMessage({id: 'name'}),
+              intl.formatMessage({id: 'public-key'}),
+              intl.formatMessage({id: 'value'}),
+              intl.formatMessage({id: 'block-height'}),
+              intl.formatMessage({id: 'created-at'}),
+              intl.formatMessage({id: 'notified-at'}),
             ]}
             data={tokenResultsPages}
           />

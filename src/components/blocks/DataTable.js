@@ -116,7 +116,11 @@ const DataTable = withTheme(({headings, data}) => {
 
   if (currentPage > data.length) {
     setPage(0);
-    return;
+    return null;
+  }
+
+  if (!data[currentPage]) {
+    return null;
   }
 
   return (

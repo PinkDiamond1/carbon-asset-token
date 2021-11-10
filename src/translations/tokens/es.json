@@ -1,4 +1,12 @@
 {
   "hello-world": "Hola Mundo",
-  "app-title": "Explorador de retiro de Token de carbono"
+  "app-title": "Explorador de retiro de Token de carbono",
+  "search": "Buscar",
+  "coin-id": "ID de moneda",
+  "name": "Nombre",
+  "public-key": "Llave pública",
+  "value": "Valor",
+  "block-height": "Altura del bloque",
+  "created-at": "Creado en",
+  "notified-at": "Notificado en"
 }
