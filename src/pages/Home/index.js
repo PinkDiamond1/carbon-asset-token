@@ -1,7 +1,10 @@
+import _ from 'lodash';
+
 import React, {useEffect, useState, useMemo} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import MiniSearch from 'minisearch';
 
+import constants from '../../constants';
 import {Card, DataTable} from '../../components';
 import {getRetiredTokens} from '../../store/actions/tokens';
 
@@ -45,17 +48,18 @@ const Home = () => {
     }
   }, [tokenStore.retiredTokens]);
 
-  const tokenResults = useMemo(() => {
+  const tokenResultsPages = useMemo(() => {
     if (!tokenStore.retiredTokens) {
       return undefined;
     }
 
     if (!search || search.length === 0) {
-      return tokenStore.retiredTokens;
+      return _.chunk(tokenStore.retiredTokens, constants.MAX_TABLE_SIZE);
     }
 
-    return tokenStore.retiredTokens.filter(token =>
-      search.includes(token.coin_id),
+    return _.chunk(
+      tokenStore.retiredTokens.filter(token => search.includes(token.coin_id)),
+      constants.MAX_TABLE_SIZE,
     );
   }, [tokenStore.retiredTokens, search]);
 
@@ -65,7 +69,7 @@ const Home = () => {
     setSearch(search.map(result => result.id));
   };
 
-  if (!tokenResults) {
+  if (!tokenResultsPages) {
     return null;
   }
 
@@ -78,20 +82,22 @@ const Home = () => {
           onChange={handleSearchInputChange}
         />
       </Card>
-      <Card>
-        <DataTable
-          headings={[
-            'Coin ID',
-            'Name',
-            'Public Key',
-            'Value',
-            'Block Height',
-            'Created At',
-            'Notified At',
-          ]}
-          data={tokenResults}
-        />
-      </Card>
+      <div style={{height: '700px'}}>
+        <Card>
+          <DataTable
+            headings={[
+              'Coin ID',
+              'Name',
+              'Public Key',
+              'Value',
+              'Block Height',
+              'Created At',
+              'Notified At',
+            ]}
+            data={tokenResultsPages}
+          />
+        </Card>
+      </div>
     </>
   );
 };
