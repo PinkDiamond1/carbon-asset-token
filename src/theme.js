@@ -53,6 +53,8 @@ let colors = {
     // Sometimes, they are applied to surfaces.
     onPrimary: '#00000',
     onSecondary: '#00000',
+    onSurfacePrimaryVarient: '#FFFFFF',
+    onSurfaceSecondaryVarient: 'rgb(238, 238, 238)',
     onBackground: 'rgba(0, 0, 0, 0.54)',
     onSurface: 'rgba(0, 0, 0, 0.87)',
     onError: '#00000',
@@ -75,6 +77,8 @@ let colors = {
     onSecondary: '#FFFFFF',
     onBackground: '#FFFFFF',
     onSurface: '#FFFFFF',
+    onSurfacePrimaryVarient: 'rgb(81, 81, 81)',
+    onSurfaceSecondaryVarient: 'rgb(32, 32, 32)',
     onError: '#FFFFFF',
     status: {
       error: '#dc3546',
