@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/Chia-Network/carbon-asset-token/compare/v9.3.2...v0.0.4) (2021-11-11)
+
+
+### Features
+
+* add full text search and filtering ([048078d](https://github.com/Chia-Network/carbon-asset-token/commit/048078d3d7b9ad1293319455143abb817176ea5d))
+* add icon system, sync theme with chia gui, set up app store, set up typography ([debead7](https://github.com/Chia-Network/carbon-asset-token/commit/debead7d28c5a2eb4fd86bf2746044b8eb0a9b62))
+* fulltext filtering and pagination ([40837fc](https://github.com/Chia-Network/carbon-asset-token/commit/40837fc518aa1660a93d35fdbc2df12dc99615eb))
+* remember theme selection in local storage ([750c95a](https://github.com/Chia-Network/carbon-asset-token/commit/750c95af504781d43f457efefe5c5263da7f50c9))
+* themed search field ([565d030](https://github.com/Chia-Network/carbon-asset-token/commit/565d030686b8acac85be471b713f395a39847867))
+* translations for table headers ([372ad90](https://github.com/Chia-Network/carbon-asset-token/commit/372ad906c2e52f148a61d4ff9c8e7e5483e3bd33))
+
+
+### Bug Fixes
+
+* max table height ([62dbd6e](https://github.com/Chia-Network/carbon-asset-token/commit/62dbd6e1668c64dd2206dbe4f79d668005dde0a9))
+
 ### 0.0.3 (2021-11-03)
 
 
