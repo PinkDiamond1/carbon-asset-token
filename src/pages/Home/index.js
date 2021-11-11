@@ -91,7 +91,7 @@ const Home = () => {
       <Card
         maxHeight={
           /* window - header - search container */
-          `calc(100% - ${constants.HEADER_HEIGHT}px - 120px)`
+          `calc(100% - ${constants.HEADER_HEIGHT}px - 135px)`
         }>
         <DataTable
           headings={[
