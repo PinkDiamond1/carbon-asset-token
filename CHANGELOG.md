@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/Chia-Network/carbon-asset-token/compare/v0.0.4...v0.0.5) (2021-11-11)
+
+
+### Bug Fixes
+
+* margin defect at the bottom ([ff103e3](https://github.com/Chia-Network/carbon-asset-token/commit/ff103e34eb6cfce57b10bfdfb881767d4e9503af))
+* package.json ([b40adc5](https://github.com/Chia-Network/carbon-asset-token/commit/b40adc568b528663f613f43fcc6f3466611bda05))
+
 ### [0.0.4](https://github.com/Chia-Network/carbon-asset-token/compare/v9.3.2...v0.0.4) (2021-11-11)
 
 ### Features
