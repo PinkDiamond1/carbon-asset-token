@@ -54,7 +54,7 @@ const Tr = styled('tr')`
   background-color: ${props => props.theme.colors[props.selectedTheme].surface};
 
   ${props =>
-    props.index % 2 === 0 &&
+    props.index % 2 !== 0 &&
     `
   background-color: ${
     props.theme.colors[props.selectedTheme].onSurfacePrimaryVarient

@@ -6,7 +6,7 @@ import MiniSearch from 'minisearch';
 import {useIntl} from 'react-intl';
 
 import constants from '../../constants';
-import {Card, DataTable} from '../../components';
+import {Card, DataTable, SearchInputField} from '../../components';
 import {getRetiredTokens} from '../../store/actions/tokens';
 
 const miniSearch = new MiniSearch({
@@ -86,11 +86,7 @@ const Home = () => {
   return (
     <>
       <Card>
-        <input
-          type="text"
-          placeholder={intl.formatMessage({id: 'search'})}
-          onChange={handleSearchInputChange}
-        />
+        <SearchInputField onChange={handleSearchInputChange} />
       </Card>
       <Card
         maxHeight={

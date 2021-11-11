@@ -1,4 +1,5 @@
 const hexToRgba = (hex, opacity) => {
+  console.log(hex);
   opacity = opacity || 1;
   hex = hex.replace(/[^0-9A-F]/gi, '');
   var bigint = parseInt(hex, 16);
@@ -6,7 +7,7 @@ const hexToRgba = (hex, opacity) => {
   var g = (bigint >> 8) & 255;
   var b = bigint & 255;
 
-  return [r, g, b, opacity].join(',');
+  return `rgba(${[r, g, b, opacity].join(',')})`;
 };
 
 const headings = {
@@ -33,7 +34,7 @@ let colors = {
     // appears behind scrollable content
     background: '#fafafa',
     // affect surfaces of componennts such as cards sheets and menus
-    surface: '##fff',
+    surface: '#ffffff',
     surfaceShadow:
       '0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);',
     //"On" colors
@@ -53,10 +54,10 @@ let colors = {
     // Sometimes, they are applied to surfaces.
     onPrimary: '#00000',
     onSecondary: '#00000',
-    onSurfacePrimaryVarient: '#FFFFFF',
-    onSurfaceSecondaryVarient: 'rgb(238, 238, 238)',
-    onBackground: 'rgba(0, 0, 0, 0.54)',
-    onSurface: 'rgba(0, 0, 0, 0.87)',
+    onSurfacePrimaryVarient: '#f9f9f9',
+    onSurfaceSecondaryVarient: '#eeeeee',
+    onBackground: '#757575',
+    onSurface: '#212121',
     onError: '#00000',
     status: {
       error: '#dc3546',
@@ -73,13 +74,13 @@ let colors = {
     surface: '#424242',
     surfaceShadow:
       '0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);',
-    onPrimary: '#FFFFFF',
-    onSecondary: '#FFFFFF',
-    onBackground: '#FFFFFF',
-    onSurface: '#FFFFFF',
-    onSurfacePrimaryVarient: 'rgb(81, 81, 81)',
-    onSurfaceSecondaryVarient: 'rgb(32, 32, 32)',
-    onError: '#FFFFFF',
+    onPrimary: '#ffffff',
+    onSecondary: '#ffffff',
+    onBackground: '#ffffff',
+    onSurface: '#ffffff',
+    onSurfacePrimaryVarient: '#515151',
+    onSurfaceSecondaryVarient: '#202020',
+    onError: '#ffffff',
     status: {
       error: '#dc3546',
       warning: '#f7c93e',
