@@ -101,6 +101,7 @@ const StyledPaginateContainer = styled.div`
         : props.theme.colors[props.selectedTheme].onSurfaceSecondaryVarient};
 
     color: ${props => props.theme.colors[props.selectedTheme].onSurface};
+    border-radius: 4px;
   }
   li {
     cursor: pointer;

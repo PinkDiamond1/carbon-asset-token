@@ -5,7 +5,13 @@ import {FormattedMessage} from 'react-intl';
 
 import constants from '../../constants';
 import {toggleTheme} from '../../store/actions/app';
-import {H1, ChiaLogo, LightThemeIcon, DarkThemeIcon} from '../../components';
+import {
+  H1,
+  ChiaLogo,
+  LightThemeIcon,
+  DarkThemeIcon,
+  LocaleSwitcher,
+} from '../../components';
 
 const AppHeaderContainer = styled('header')`
   width: 100%;
@@ -29,6 +35,11 @@ const ThemeSwitchContainer = styled('div')`
   padding: 0 50px;
 `;
 
+const AppOptionsContainer = styled('div')`
+  display: flex;
+  align-items: center;
+`;
+
 const AppHeader = withTheme(() => {
   const dispatch = useDispatch();
   const appStore = useSelector(state => state.app);
@@ -45,13 +56,16 @@ const AppHeader = withTheme(() => {
       <H1>
         <FormattedMessage id="app-title" />
       </H1>
-      <ThemeSwitchContainer onClick={handleThemeSwitch}>
-        {appStore.theme === constants.THEME.DARK ? (
-          <LightThemeIcon cursor="pointer" />
-        ) : (
-          <DarkThemeIcon cursor="pointer" />
-        )}
-      </ThemeSwitchContainer>
+      <AppOptionsContainer>
+        <LocaleSwitcher />
+        <ThemeSwitchContainer onClick={handleThemeSwitch}>
+          {appStore.theme === constants.THEME.DARK ? (
+            <LightThemeIcon cursor="pointer" />
+          ) : (
+            <DarkThemeIcon cursor="pointer" />
+          )}
+        </ThemeSwitchContainer>
+      </AppOptionsContainer>
     </AppHeaderContainer>
   );
 });
