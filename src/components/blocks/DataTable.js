@@ -13,19 +13,19 @@ const Table = styled('table')`
   box-shadow: ${props => props.theme.colors[props.selectedTheme].surfaceShadow};
 `;
 
-const TableHead = styled('thead')`
+const THead = styled('thead')`
   font-weight: 500;
   background-color: ${props =>
     props.theme.colors[props.selectedTheme].onSurfaceSecondaryVarient};
 `;
 
-const TableHeader = styled('th')`
+const Th = styled('th')`
   padding: 16px;
   font-size: 0.875rem;
   color: ${props => props.theme.colors[props.selectedTheme].onSurface};
   display: table-cell;
   text-align: left;
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: ${props => props.theme.typography.primary};
   font-weight: 400;
   line-height: 1.43;
   border-bottom: ${props =>
@@ -35,17 +35,21 @@ const TableHeader = styled('th')`
 
   letter-spacing: 0.01071em;
   vertical-align: inherit;
-`;
 
-const TableHeaderStart = styled(TableHeader)`
+  ${props =>
+    props.start &&
+    `
   border-top-left-radius: 4px;
-`;
+  `}
 
-const TableHeaderEnd = styled(TableHeader)`
+  ${props =>
+    props.end &&
+    `
   border-top-right-radius: 4px;
+  `}
 `;
 
-const TableRow = styled('tr')`
+const Tr = styled('tr')`
   color: ${props => props.theme.colors[props.selectedTheme].onSurface};
   background-color: ${props => props.theme.colors[props.selectedTheme].surface};
 
@@ -58,7 +62,7 @@ const TableRow = styled('tr')`
   `}
 `;
 
-const TableData = styled('td')`
+const Td = styled('td')`
   display: table-cell;
   padding: 16px;
   font-size: 0.875rem;
@@ -75,6 +79,8 @@ const TableData = styled('td')`
   vertical-align: inherit;
 `;
 
+// React ReactPaginate cant be directly modified by styled-components
+// so we create a wrapper that can select the sub classes within the component
 const StyledPaginateContainer = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -141,33 +147,28 @@ const DataTable = withTheme(({headings, data}) => {
         />
       </StyledPaginateContainer>
       <Table selectedTheme={appStore.theme}>
-        <TableHead selectedTheme={appStore.theme}>
+        <THead selectedTheme={appStore.theme}>
           <tr>
-            {headings.map((heading, index) => {
-              let Th = TableHeader;
-              if (index === 0) {
-                Th = TableHeaderStart;
-              }
-              if (index === headings.length - 1) {
-                Th = TableHeaderEnd;
-              }
-              return (
-                <Th selectedTheme={appStore.theme} key={index}>
-                  {heading}
-                </Th>
-              );
-            })}
+            {headings.map((heading, index) => (
+              <Th
+                start={index === 0}
+                end={index === headings.length - 1}
+                selectedTheme={appStore.theme}
+                key={index}>
+                {heading}
+              </Th>
+            ))}
           </tr>
-        </TableHead>
+        </THead>
         <tbody>
           {data[currentPage].map((record, index) => (
-            <TableRow index={index} selectedTheme={appStore.theme} key={index}>
+            <Tr index={index} selectedTheme={appStore.theme} key={index}>
               {Object.keys(record).map((key, index) => (
-                <TableData selectedTheme={appStore.theme} key={index}>
+                <Td selectedTheme={appStore.theme} key={index}>
                   {record[key]}
-                </TableData>
+                </Td>
               ))}
-            </TableRow>
+            </Tr>
           ))}
         </tbody>
       </Table>

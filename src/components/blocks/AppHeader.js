@@ -9,7 +9,7 @@ import {H1, ChiaLogo, LightThemeIcon, DarkThemeIcon} from '../../components';
 
 const AppHeaderContainer = styled('header')`
   width: 100%;
-  height: 64px;
+  height: ${constants.HEADER_HEIGHT}px;
   background-color: ${props => props.theme.colors[props.selectedTheme].surface};
   box-shadow: rgb(0 0 0 / 20%) 0px 0px 8px;
   display: flex;

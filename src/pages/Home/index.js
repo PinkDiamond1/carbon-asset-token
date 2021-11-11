@@ -50,17 +50,19 @@ const Home = () => {
     }
   }, [tokenStore.retiredTokens]);
 
-  // Chunk the tokenResults into pages for pagination
   const tokenResultsPages = useMemo(() => {
     if (!tokenStore.retiredTokens) {
       return undefined;
     }
 
     if (!search || search.length === 0) {
+      // Chunk the tokenResults into pages for pagination
       return _.chunk(tokenStore.retiredTokens, constants.MAX_TABLE_SIZE);
     }
 
+    // Chunk the tokenResults into pages for pagination
     return _.chunk(
+      // sort by search score if search term is used
       _.sortBy(
         tokenStore.retiredTokens.filter(token =>
           search.includes(token.coin_id),
@@ -90,22 +92,24 @@ const Home = () => {
           onChange={handleSearchInputChange}
         />
       </Card>
-      <div style={{height: '700px'}}>
-        <Card>
-          <DataTable
-            headings={[
-              intl.formatMessage({id: 'coin-id'}),
-              intl.formatMessage({id: 'name'}),
-              intl.formatMessage({id: 'public-key'}),
-              intl.formatMessage({id: 'value'}),
-              intl.formatMessage({id: 'block-height'}),
-              intl.formatMessage({id: 'created-at'}),
-              intl.formatMessage({id: 'notified-at'}),
-            ]}
-            data={tokenResultsPages}
-          />
-        </Card>
-      </div>
+      <Card
+        maxHeight={
+          /* window - header - search container */
+          `calc(100% - ${constants.HEADER_HEIGHT}px - 120px)`
+        }>
+        <DataTable
+          headings={[
+            intl.formatMessage({id: 'coin-id'}),
+            intl.formatMessage({id: 'name'}),
+            intl.formatMessage({id: 'public-key'}),
+            intl.formatMessage({id: 'value'}),
+            intl.formatMessage({id: 'block-height'}),
+            intl.formatMessage({id: 'created-at'}),
+            intl.formatMessage({id: 'notified-at'}),
+          ]}
+          data={tokenResultsPages}
+        />
+      </Card>
     </>
   );
 };

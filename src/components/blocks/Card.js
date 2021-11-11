@@ -8,16 +8,18 @@ const CardContainer = styled('div')`
   border-radius: 4px;
   padding: 16px;
   margin: 12px;
-  max-height: 100%;
+  max-height: ${props => props.maxHeight};
   overflow: auto;
   overflow-x: hidden;
 `;
 
-const Card = withTheme(({children}) => {
+const Card = withTheme(({children, maxHeight = '100%'}) => {
   const appStore = useSelector(state => state.app);
 
   return (
-    <CardContainer selectedTheme={appStore.theme}>{children}</CardContainer>
+    <CardContainer selectedTheme={appStore.theme} maxHeight={maxHeight}>
+      {children}
+    </CardContainer>
   );
 });
 
