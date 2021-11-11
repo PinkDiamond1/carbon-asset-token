@@ -1,5 +1,4 @@
 const hexToRgba = (hex, opacity) => {
-  console.log(hex);
   opacity = opacity || 1;
   hex = hex.replace(/[^0-9A-F]/gi, '');
   var bigint = parseInt(hex, 16);
@@ -20,6 +19,7 @@ const headings = {
 };
 
 /**
+ * Values should be hex values and not rgb/rgba
  * https://material.io/design/color/the-color-system.html#tools-for-picking-colors
  * @type {ThemeVariant}
  */

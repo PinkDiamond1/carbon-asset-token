@@ -49,7 +49,6 @@ export const setLocale = locale => {
     localeToSet = 'en-US';
   }
 
-  console.log;
   return {
     type: actions.SET_LOCALE,
     payload: localeToSet,

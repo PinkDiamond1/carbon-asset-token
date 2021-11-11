@@ -75,7 +75,6 @@ const Home = () => {
 
   const handleSearchInputChange = event => {
     const search = miniSearch.search(event.target.value, {prefix: true});
-    console.log(search);
     setSearch(search.sort(result => result.score).map(result => result.id));
   };
 
