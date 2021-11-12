@@ -20,7 +20,7 @@ const THead = styled('thead')`
 `;
 
 const Th = styled('th')`
-  padding: 16px;
+  padding: 1rem;
   font-size: 0.875rem;
   color: ${props => props.theme.colors[props.selectedTheme].onSurface};
   display: table-cell;
@@ -39,13 +39,13 @@ const Th = styled('th')`
   ${props =>
     props.start &&
     `
-  border-top-left-radius: 4px;
+  border-top-left-radius: 0.25rem;
   `}
 
   ${props =>
     props.end &&
     `
-  border-top-right-radius: 4px;
+  border-top-right-radius: 0.25rem;
   `}
 `;
 
@@ -64,13 +64,13 @@ const Tr = styled('tr')`
 
 const Td = styled('td')`
   display: table-cell;
-  padding: 16px;
+  padding: 1rem;
   font-size: 0.875rem;
   text-align: left;
   font-family: ${props => props.theme.typography.primary};
   font-weight: 400;
   line-height: 1.43;
-  border-bottom: 1px solid
+  border-bottom: 0.0625rem solid
     ${props =>
       props.selectedTheme === constants.THEME.DARK
         ? 'rgba(81, 81, 81, 1)'
@@ -101,12 +101,12 @@ const StyledPaginateContainer = styled.div`
         : props.theme.colors[props.selectedTheme].onSurfaceSecondaryVarient};
 
     color: ${props => props.theme.colors[props.selectedTheme].onSurface};
-    border-radius: 4px;
+    border-radius: 0.25rem;
   }
   li {
     cursor: pointer;
-    width: 25px;
-    height: 25px;
+    width: 1.5625rem;
+    height: 1.5625rem;
     display: flex;
     justify-content: center;
     align-items: center;

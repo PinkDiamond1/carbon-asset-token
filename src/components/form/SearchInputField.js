@@ -17,15 +17,15 @@ const Input = styled('input')`
   background-color: transparent;
   display: flex;
   justify-content: center;
-  border-radius: 4px;
-  padding: 10px;
-  font-size: 16px;
-  padding-right: 30px;
+  border-radius: 0.25rem;
+  padding: 0.625rem;
+  font-size: 1rem;
+  padding-right: 1.875rem;
   margin: 0;
 
   &:focus {
     outline: ${props => props.theme.colors[props.selectedTheme].onSurface} solid
-      1px;
+      0.0625rem;
   }
 
   &::placeholder {
@@ -40,8 +40,8 @@ const Input = styled('input')`
 
 const SearchIconContainer = styled('div')`
   position: absolute;
-  top: 10px;
-  right: -15px;
+  top: 0.625rem;
+  right: -0.9375rem;
 `;
 
 const SearchInputField = withTheme(({onChange}) => {

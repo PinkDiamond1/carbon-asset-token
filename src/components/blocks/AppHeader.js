@@ -17,14 +17,14 @@ const AppHeaderContainer = styled('header')`
   width: 100%;
   height: ${constants.HEADER_HEIGHT}px;
   background-color: ${props => props.theme.colors[props.selectedTheme].surface};
-  box-shadow: rgb(0 0 0 / 20%) 0px 0px 8px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 0px 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
 const LogoContainer = styled('div')`
-  width: 99px;
+  width: 6.1875rem;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -32,7 +32,7 @@ const LogoContainer = styled('div')`
 `;
 
 const ThemeSwitchContainer = styled('div')`
-  padding: 0 50px;
+  padding: 0 3.125rem;
 `;
 
 const AppOptionsContainer = styled('div')`

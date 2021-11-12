@@ -5,9 +5,9 @@ import {useSelector} from 'react-redux';
 const CardContainer = styled('div')`
   background-color: ${props => props.theme.colors[props.selectedTheme].surface};
   box-shadow: ${props => props.theme.colors[props.selectedTheme].surfaceShadow};
-  border-radius: 4px;
-  padding: 16px;
-  margin: 12px;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin: 0.75rem;
   max-height: ${props => props.maxHeight};
   overflow: auto;
   overflow-x: hidden;
