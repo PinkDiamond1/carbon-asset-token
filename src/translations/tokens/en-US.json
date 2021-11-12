@@ -1,7 +1,7 @@
 {
   "hello-world": "Hello World",
   "app-title": "Carbon Token Retirement Explorer",
-  "search": "Search",
+  "search": "Search by Name / Public Key / Coin ID / Block Height",
   "coin-id": "Coin ID",
   "name": "Name",
   "public-key": "Public Key",

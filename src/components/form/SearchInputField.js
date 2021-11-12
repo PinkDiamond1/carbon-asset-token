@@ -6,6 +6,7 @@ import styled, {withTheme} from 'styled-components';
 import {MagnifyGlassIcon} from '../icons';
 
 const Input = styled('input')`
+  width: 35.125rem;
   border: 1px solid
     ${props =>
       props.theme.hexToRgba(
@@ -41,7 +42,7 @@ const Input = styled('input')`
 const SearchIconContainer = styled('div')`
   position: absolute;
   top: 0.625rem;
-  right: -0.9375rem;
+  right: -23.6875rem;
 `;
 
 const SearchInputField = withTheme(({onChange}) => {
