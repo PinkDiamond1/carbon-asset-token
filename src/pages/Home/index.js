@@ -40,7 +40,7 @@ const Home = () => {
   const [search, setSearch] = useState();
 
   useEffect(
-    () => dispatch(getRetiredTokens({useMockedResponse: true})),
+    () => dispatch(getRetiredTokens({useMockedResponse: false})),
     [dispatch],
   );
 

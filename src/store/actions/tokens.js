@@ -30,7 +30,7 @@ export const getRetiredTokens = ({useMockedResponse = false}) => {
       if (useMockedResponse) {
         dispatch(mockedTokenResponse);
       } else {
-        const response = fetch(`${constants.API_HOST}/tokens`);
+        const response = await fetch(`http://${constants.API_HOST}/tokens`);
 
         if (response.ok) {
           const results = await response.json();
