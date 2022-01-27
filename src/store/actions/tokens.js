@@ -30,10 +30,20 @@ export const getRetiredTokens = ({useMockedResponse = false}) => {
       if (useMockedResponse) {
         dispatch(mockedTokenResponse);
       } else {
-        const response = fetch(`${constants.API_HOST}/tokens`);
+        const response = await fetch(`http://${constants.API_HOST}/tokens`);
 
         if (response.ok) {
-          const results = await response.json();
+          // need to re map the keys so that they are the correct order
+          const results = (await response.json()).map(value => ({
+            coin_id: value.coin_id,
+            name: 'Bear Company',
+            public_key: value.public_key,
+            value: value.value,
+            block_height: value.block_height,
+            created_at: value.created_at,
+            notified_at: value.notified_at,
+          }));
+
           dispatch({
             type: actions.GET_RETIRED_TOKENS,
             payload: results,
