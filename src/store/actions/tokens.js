@@ -30,7 +30,7 @@ export const getRetiredTokens = ({useMockedResponse = false}) => {
       if (useMockedResponse) {
         dispatch(mockedTokenResponse);
       } else {
-        const response = await fetch(`http://${constants.API_HOST}/tokens`);
+        const response = await fetch(`https://${constants.API_HOST}/tokens`);
 
         if (response.ok) {
           // need to re map the keys so that they are the correct order
