@@ -12,8 +12,8 @@ import {getRetiredTokens} from '../../store/actions/tokens';
 const miniSearch = new MiniSearch({
   fields: [
     'id',
-    'coin_id',
     'name',
+    'asset_name',
     'public_key',
     'value',
     'block_height',
@@ -22,7 +22,7 @@ const miniSearch = new MiniSearch({
   ],
   extractField: (document, fieldName) => {
     if (fieldName === 'id') {
-      return document['coin_id'];
+      return document['block_height'];
     }
     return document[fieldName];
   },
@@ -94,11 +94,11 @@ const Home = () => {
         }>
         <DataTable
           headings={[
-            intl.formatMessage({id: 'coin-id'}),
+            intl.formatMessage({id: 'block-height'}),
+            intl.formatMessage({id: 'value'}),
+            intl.formatMessage({id: 'asset-name'}),
             intl.formatMessage({id: 'name'}),
             intl.formatMessage({id: 'public-key'}),
-            intl.formatMessage({id: 'value'}),
-            intl.formatMessage({id: 'block-height'}),
             intl.formatMessage({id: 'created-at'}),
             intl.formatMessage({id: 'notified-at'}),
           ]}

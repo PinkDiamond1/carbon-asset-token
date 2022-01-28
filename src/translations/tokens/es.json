@@ -5,6 +5,7 @@
   "coin-id": "ID de moneda",
   "name": "Nombre",
   "public-key": "Llave pública",
+  "asset-name": "Nombre del activo",
   "value": "Valor",
   "block-height": "Altura del bloque",
   "created-at": "Creado en",

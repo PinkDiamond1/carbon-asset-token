@@ -5,6 +5,7 @@
   "coin-id": "コインID",
   "name": "名前",
   "public-key": "公開鍵",
+  "asset-name": "アセット名",
   "value": "価値",
   "block-height": "ブロックの高さ",
   "created-at": "作成場所",
