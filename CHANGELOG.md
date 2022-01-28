@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/Chia-Network/carbon-asset-token/compare/v0.0.8...v0.0.9) (2022-01-28)
+
+
+### Features
+
+* demo clean up ([05aff57](https://github.com/Chia-Network/carbon-asset-token/commit/05aff574ad0358bb68e3efcfedec42330f47e290))
+
 ### [0.0.8](https://github.com/Chia-Network/carbon-asset-token/compare/v0.0.7...v0.0.8) (2022-01-27)
 
 
